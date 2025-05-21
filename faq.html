@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Nossa Loja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 30px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #0056b3;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active::after {
+            content: '-';
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Perguntas Frequentes (FAQ)</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">Como faço para rastrear meu pedido?</div>
+            <div class="faq-answer">
+                Após a confirmação do envio, você receberá um e-mail com o código de rastreamento e um link para acompanhar o status da entrega. Você também pode acessar a seção "Meus Pedidos" em sua conta para verificar o rastreamento.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Quais são as formas de pagamento aceitas?</div>
+            <div class="faq-answer">
+                Aceitamos pagamentos via cartão de crédito (Visa, Mastercard, Elo, American Express), boleto bancário e Pix.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Qual é o prazo de entrega?</div>
+            <div class="faq-answer">
+                O prazo de entrega varia de acordo com a sua localização e o tipo de frete escolhido. Você pode simular o prazo e o valor do frete na página do produto ou no carrinho de compras, inserindo o seu CEP.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Posso trocar ou devolver um produto?</div>
+            <div class="faq-answer">
+                Sim, você pode solicitar a troca ou devolução de um produto em até 7 dias corridos após o recebimento, desde que o produto esteja em perfeitas condições e com a embalagem original. Para mais detalhes, consulte nossa "Política de Trocas e Devoluções".
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Como entro em contato com o suporte ao cliente?</div>
+            <div class="faq-answer">
+                Você pode nos contatar através do nosso formulário de contato em nosso site, pelo e-mail suporte@nossaloja.com.br ou pelo telefone (XX) XXXX-XXXX, de segunda a sexta-feira, das 9h às 18h.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    question.classList.toggle('active');
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
